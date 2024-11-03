@@ -1,7 +1,9 @@
 name: Prettier Fix
 
+
 on:
   workflow_dispatch:
+  
     inputs:
       reason:
         description: "Reason for manually triggering this workflow"
@@ -37,6 +39,7 @@ jobs:
           git config user.email 'monkeytypegeorge@gmail.com'
           git add .
           git commit -m 'Prettier fix'
+          
 
       - name: Create pull request
         uses: peter-evans/create-pull-request@v3
@@ -44,3 +47,5 @@ jobs:
           branch: ${{ env.BRANCH_TITLE }}
           title: ${{ env.PR_TITLE }}
           body: ${{ env.PR_TITLE }}
+
+# adding
